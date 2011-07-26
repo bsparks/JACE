@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Truncator Demo || Widget</title>
+        
+        <!--YUI Reset CSS-->
+        <link rel="stylesheet" type="text/css" href="../rs/yui/reset-base-fonts.css" />
+        <!--jQuery UI CSS-->
+        <link rel="stylesheet" type="text/css" href="../rs/jquery-ui-1.8.12/css/ui-lightness/jquery-ui-1.8.12.custom.css" />
+        <!--jQuery UI Truncator-->
+        <link rel="stylesheet" type="text/css" href="jquery.ui.truncator.css" />
+        
+        <style>
+            .demo {padding: 10px;}
+        </style>
+    </head>
+    <body>
+        
+        <!--START: demo-->
+        <div class="demo">
+            <h1>Public API:</h1>
+            <button id="refresh">Refresh</button>
+            <button id="enable">Enable</button>
+            <button id="disable">Disable</button>
+            <button id="destroy">Destroy</button>
+            
+            <hr />
+            
+            <h1>Options:</h1>
+            <button id="strLimit">strLimit</button>
+            <button id="strSuffix">strSuffix</button>
+            <button id="minHeight">minHeight</button>
+            <button id="fadeColor">fadeColor</button>
+            <button id="moreLabel">moreLabel</button>
+            <button id="lessLabel">lessLabel</button>
+            
+            <hr />
+            
+            <ul>
+                <li>
+                    <div class="posting">
+                        <h4><span id="example1">Lorem ipsum dolor sit amet, consectetur adipiscing elit duis tellus nisl, malesuada eu consectetur ut.</span></h4>
+                        <div id="example2" class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Duis tellus nisl, malesuada eu consectetur ut, mollis nec neque. 
+                            Aliquam iaculis dui id libero rutrum placerat. In luctus ultricies 
+                            leo, a luctus ligula faucibus eu. Praesent a felis ut lectus aliquam 
+                            viverra. Ut at neque sit amet sem viverra commodo. Integer orci dui, 
+                            gravida quis imperdiet euismod, placerat vel elit. Morbi convallis 
+                            dignissim libero ut placerat. Vivamus gravida imperdiet bibendum. 
+                            Donec sit amet mi nunc, sit amet elementum orci. Phasellus tempus 
+                            dignissim vehicula. Maecenas aliquam gravida dui, et dictum dolor 
+                            egestas vel. Sed ut ipsum felis. Donec rutrum tortor sit amet metus 
+                            tincidunt viverra. Sed lacinia felis ut nulla pulvinar venenatis mollis 
+                            ante ultrices. Nullam condimentum ipsum nec magna suscipit id aliquam 
+                            enim aliquet. Aenean in sem odio, ut adipiscing justo. Suspendisse in 
+                            diam dui, in ultrices urna. Mauris lectus augue, malesuada a iaculis 
+                            vel, sagittis sit amet neque. Vivamus congue interdum nulla eget consectetur.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--END: demo-->
+        
+        <!--jQuery UI Javascript-->
+        <script type='text/javascript' src="../rs/jquery-ui-1.8.12/js/jquery-1.5.1.min.js"></script>
+        <script type='text/javascript' src="../rs/jquery-ui-1.8.12/js/jquery-ui-1.8.12.custom.min.js"></script>
+        
+        <!--jQuery UI Truncator-->
+        <script type='text/javascript' src="jquery.ui.truncator.js"></script>
+        <script type='text/javascript'>
+            (function ($, undefined) {
+                $("#example1").truncator({
+                    type: "string"
+                });
+                
+                // Example 2.
+                $("#example2").truncator({
+                    type: "html"
+                });
+                
+                /************************
+                 * Public API.
+                 ************************/
+                
+                // Refresh.
+                $("#refresh").click(function () {
+                    $("#example1").truncator("refresh");
+                    $("#example2").truncator("refresh");
+                });
+                
+                // Enable.
+                $("#enable").click(function () {
+                    $("#example1").truncator("enable");
+                    $("#example2").truncator("enable");
+                });
+                
+                // Disable.
+                $("#disable").click(function () {
+                    $("#example1").truncator("disable");
+                    $("#example2").truncator("disable");
+                });
+                
+                // Destroy.
+                $("#destroy").click(function () {
+                    $("#example1").truncator("destroy");
+                    $("#example2").truncator("destroy");
+                });
+                /************************
+                 * Options.
+                 ************************/
+                // strLimit.
+                $("#strLimit").click(function () {
+                    $("#example1").truncator("strLimit", 90);
+                });
+                
+                // strSuffix.
+                $("#strSuffix").click(function () {
+                    $("#example1").truncator("strSuffix", "......");
+                });
+                
+                // minHeight.
+                $("#minHeight").click(function () {
+                    $("#example2").truncator("minHeight", 80);
+                });
+                
+                // fadeColor.
+                $("#fadeColor").click(function () {
+                    $("#example2").truncator("fadeColor", "blue");
+                });
+                
+                // moreLabel.
+                $("#moreLabel").click(function () {
+                    $("#example2").truncator("moreLabel", "More >");
+                });
+                
+                // lessLabel.
+                $("#lessLabel").click(function () {
+                    $("#example2").truncator("lessLabel", "Less <");
+                });
+            })(jQuery);
+        </script>
+    </body>
+</html>

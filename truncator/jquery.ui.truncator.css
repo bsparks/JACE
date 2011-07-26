@@ -1,0 +1,33 @@
+.ui-truncator {}
+
+/* HTML container*/
+.ui-truncator-html {
+    display: block;
+    position: relative;}
+
+/* Block container*/
+.ui-truncator-html .ui-truncator-html-block {
+    display: block;
+    padding-bottom: 0;
+    height: auto;
+    overflow: hidden;}
+
+/* Fade container */
+.ui-truncator-html .ui-truncator-html-fade {
+    display: none;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    background: url("images/ui_truncator_fffeeb.png") bottom left repeat-x;}
+.ui-truncator-html .ui-truncator-html-fade-yellow {background-image: url("images/ui_truncator_fffeeb.png");}
+.ui-truncator-html .ui-truncator-html-fade-blue {background-image: url("images/ui_truncator_e6f5fc.png");}
+
+/* Toggle */
+.ui-truncator-html .ui-truncator-html-toggle-block {text-align: left;}
+.ui-truncator-html .ui-truncator-html-toggle {
+    display: none;
+    text-align: left;
+    margin-left: 5px;
+    color: #265C84;
+    font-size: 85%;}
+.ui-truncator-html .ui-truncator-html-toggle .ui-truncator-html-more {display: inline;}
+.ui-truncator-html .ui-truncator-html-toggle .ui-truncator-html-less {display: none;}
